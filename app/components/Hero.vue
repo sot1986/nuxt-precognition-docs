@@ -11,7 +11,7 @@ const currentTab = computed(() => data.value?.find(tab => tab.title === activeTa
     <div class="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
       <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
         <div class="relative z-10 md:text-center lg:text-left">
-          <NuxtPicture
+          <NuxtImg
             class="absolute right-full bottom-full -mr-72 -mb-56 opacity-50"
             src="/images/blur-cyan.png"
             alt=""
@@ -51,7 +51,7 @@ const currentTab = computed(() => data.value?.find(tab => tab.title === activeTa
             <HeroBackground class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />
           </div>
           <div class="relative">
-            <NuxtPicture
+            <NuxtImg
               class="absolute -top-64 -right-64"
               src="/images/blur-cyan.png"
               alt=""
@@ -59,7 +59,7 @@ const currentTab = computed(() => data.value?.find(tab => tab.title === activeTa
               :height="530"
               :quality="90"
             />
-            <NuxtPicture
+            <NuxtImg
               class="absolute -right-44 -bottom-40"
               src="/images/blur-indigo.png"
               alt=""

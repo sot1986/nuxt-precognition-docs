@@ -48,7 +48,6 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    provider: 'awsAmplify',
     // The screen sizes predefined by `@nuxt/image`:
     screens: {
       'sm': 640,
@@ -60,13 +59,9 @@ export default defineNuxtConfig({
     domains: [
       'amplifyapp.com',
     ],
-    awsAmplify: {
-      formats: ['image/webp', 'image/avif', 'image/png', 'image/jpeg'],
-    },
   },
   content: {
     build: {
-
       markdown: {
         highlight: {
           theme: {
@@ -77,4 +72,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    preset: 'static'
+  }
 })

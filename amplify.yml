@@ -13,10 +13,9 @@ frontend:
     postBuild:
       commands:
         - ls -la
-        - cat .amplify-hosting/deploy-manifest.json
   artifacts:
     # Indichiamo ad Amplify di usare la cartella generata da Nitro
-    baseDirectory: .amplify-hosting
+    baseDirectory: .output/public
     files:
       - '**/*'
   cache:
