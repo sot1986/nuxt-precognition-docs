@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
@@ -40,6 +42,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       githubLink: '',
+      sitUrl: ''
     },
   },
   vue: {
@@ -74,5 +77,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'static'
+  },
+  site: {
+    url: '',
+    name: ''
   }
 })
