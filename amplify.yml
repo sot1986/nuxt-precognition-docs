@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - corepack enable
+        - corepack prepare --activate
+        - pnpm install
+    build:
+      commands:
+        # Nitro rileverà l'ambiente AWS e userà il preset 'aws-amplify'
+        # producendo automaticamente la cartella .amplify-hosting
+        - pnpm generate
+  artifacts:
+    # Indichiamo ad Amplify di usare la cartella generata da Nitro
+    baseDirectory: .amplify-hosting/static
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .pnpm-store/**/*
