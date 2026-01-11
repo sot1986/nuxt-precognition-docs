@@ -58,9 +58,7 @@ export default defineNuxtConfig({
       '2xl': 1536,
     },
     domains: [
-      'raw.githubusercontent.com',
-      'github.com',
-      'user-images.githubusercontent.com',
+      'amplifyapp.com',
     ],
     awsAmplify: {
       formats: ['image/webp', 'image/avif', 'image/png', 'image/jpeg'],

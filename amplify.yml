@@ -12,6 +12,7 @@ frontend:
         - pnpm generate
     postBuild:
       commands:
+        - ls -la
         - cat .amplify-hosting/deploy-manifest.json
   artifacts:
     # Indichiamo ad Amplify di usare la cartella generata da Nitro
