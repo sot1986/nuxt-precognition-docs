@@ -3,9 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - corepack enable
-        - corepack prepare --activate
-        - pnpm install
+        - nvm use 22 && node --version
+        - corepack enable && npx --yes nypm install
     build:
       commands:
         # Nitro rileverà l'ambiente AWS e userà il preset 'aws-amplify'
@@ -13,9 +12,7 @@ frontend:
         - pnpm generate
     postBuild:
       commands:
-        - cd .amplify-hosting
-        - ls -la
-        - cd ..
+        - cat .amplify-hosting/deploy-manifest.json
   artifacts:
     # Indichiamo ad Amplify di usare la cartella generata da Nitro
     baseDirectory: .amplify-hosting
