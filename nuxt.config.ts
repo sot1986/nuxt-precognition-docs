@@ -38,6 +38,7 @@ export default defineNuxtConfig({
         },
       ],
     },
+    baseURL: '/',    
   },
   runtimeConfig: {
     public: {
@@ -61,6 +62,7 @@ export default defineNuxtConfig({
     },
     domains: [
       'amplifyapp.com',
+      'presot-studio.it'
     ],
   },
   content: {
@@ -76,10 +78,16 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      autoSubfolderIndex: false
+    }
   },
   site: {
     url: '',
     name: ''
+  },
+  sitemap: {
+    zeroRuntime: true
   }
 })
