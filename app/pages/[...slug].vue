@@ -13,6 +13,16 @@ const { data: page } = await useAsyncData(`page`, () => {
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
+
+useSeoMeta({
+  title: () => page.value?.title ?? 'Not Found',
+  ogTitle: () => page.value?.title ?? 'Not Found',
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Nuxt Docs` : 'Nuxt Docs'
+  },
+  description: () => page.value?.description ?? 'Not Found',
+  ogDescription: () => page.value?.description ?? 'Not Found',
+})
 </script>
 
 <template>

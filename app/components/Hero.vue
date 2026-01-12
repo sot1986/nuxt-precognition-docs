@@ -18,6 +18,8 @@ const currentTab = computed(() => data.value?.find(tab => tab.title === activeTa
             :width="530"
             :height="530"
             :quality="90"
+            format="avif,webp"
+            sizes="100vw md:530px"
           />
           <div class="relative">
             <p class="inline bg-linear-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
@@ -58,13 +60,17 @@ const currentTab = computed(() => data.value?.find(tab => tab.title === activeTa
               :width="530"
               :height="530"
               :quality="90"
+              format="avif,webp"
+              sizes="100vw md:530px"
             />
             <NuxtPicture
               class="absolute -right-44 -bottom-40"
               src="/images/blur-indigo.png"
+              format="avif,webp"
               alt=""
               :width="567"
               :height="567"
+              sizes="100vw md:567px"
               :quality="90"
             />
             <div class="absolute inset-0 rounded-2xl bg-linear-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
