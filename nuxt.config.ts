@@ -79,10 +79,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'static',
-    // prerender: {
-    //   // crawlLinks: true,
-    //   routes: ['/sitemap.xml'],
-    // },
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
   },
   site: {
     url: '',
@@ -90,5 +90,6 @@ export default defineNuxtConfig({
   },
   sitemap: {
     zeroRuntime: true,
+    xsl: false,
   },
 })
