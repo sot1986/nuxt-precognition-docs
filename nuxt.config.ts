@@ -31,12 +31,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
       ],
-      script: [
-        {
-          src: 'https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1',
-          type: 'module',
-        },
-      ],
     },
     baseURL: '/',
   },
@@ -90,7 +84,7 @@ export default defineNuxtConfig({
     name: '',
   },
   sitemap: {
-    zeroRuntime: true,
+    // zeroRuntime: true,
     xsl: false,
   },
 })

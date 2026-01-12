@@ -3,7 +3,10 @@ defineOptions({
   name: 'MobileNavigation',
 })
 
-const wrapper = ref<{ hide: () => void }>()
+function hide() {
+  const el = document.querySelector('#mobile-nav-wrapper') as unknown as { hide: () => void }
+  el.hide()
+}
 </script>
 
 <template>
@@ -18,7 +21,7 @@ const wrapper = ref<{ hide: () => void }>()
   </button>
 
   <ClientOnly>
-    <el-dialog ref="wrapper">
+    <el-dialog id="mobile-nav-wrapper">
       <dialog
         id="mobile-navigation"
         class="backdrop:bg-transparent"
@@ -41,7 +44,7 @@ const wrapper = ref<{ hide: () => void }>()
                 <LogoMark class="h-9 w-9" />
               </NuxtLink>
 
-              <SideNavigation class="mt-5 px-1" @click="wrapper?.hide()" />
+              <SideNavigation class="mt-5 px-1" @click="hide" />
             </div>
           </div>
         </el-dialog-panel>
