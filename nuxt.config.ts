@@ -58,6 +58,7 @@ export default defineNuxtConfig({
       'amplifyapp.com',
       'presot-studio.it',
     ],
+    provider: 'ipx',
   },
   content: {
     build: {
