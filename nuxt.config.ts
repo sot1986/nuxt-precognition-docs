@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/hints',
@@ -11,8 +13,6 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@nuxtjs/color-mode',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
   ],
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
@@ -38,12 +38,12 @@ export default defineNuxtConfig({
         },
       ],
     },
-    baseURL: '/',    
+    baseURL: '/',
   },
   runtimeConfig: {
     public: {
       githubLink: '',
-      sitUrl: ''
+      sitUrl: '',
     },
   },
   vue: {
@@ -62,7 +62,7 @@ export default defineNuxtConfig({
     },
     domains: [
       'amplifyapp.com',
-      'presot-studio.it'
+      'presot-studio.it',
     ],
   },
   content: {
@@ -80,14 +80,15 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      autoSubfolderIndex: false
-    }
+      crawlLinks: true,
+      routes: ['/sitemap.xml'],
+    },
   },
   site: {
     url: '',
-    name: ''
+    name: '',
   },
   sitemap: {
-    zeroRuntime: true
-  }
+    zeroRuntime: true,
+  },
 })
