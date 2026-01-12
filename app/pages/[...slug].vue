@@ -4,9 +4,9 @@ import DocsHeader from '~/components/DocsHeader.vue'
 
 const route = useRoute()
 
-const { data: page } = await useAsyncData(`page`, () => {
+const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('pages')
-    .path(route.path)
+    .path(route.path === '/' ? '/' : route.path.replace(/\/$/, ''))
     .first()
 })
 
